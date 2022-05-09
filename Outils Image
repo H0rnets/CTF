@@ -5,7 +5,10 @@ Lien : https://aperisolve.fr
 Binwalk
 Outils permettant d'extraire des fichiers caché.
 Utilisation : binwalk --dd=".*" lefichier.txt
+Pour ensuite unzip : 
+zlib-flate -uncompress < extracted_file.zip > cleartext_file
 Lien: https://github.com/ReFirmLabs/binwalk.git
+
 
 LSB-Steganographie
 Outil permettant d'encoder/décoder de la data en modifiant les bits de couleur (LSB).
