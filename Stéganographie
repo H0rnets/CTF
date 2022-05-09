@@ -1,1 +1,44 @@
+Sonic-Visualizer
+Outil d'analyse de fichier audio (Utile pour afficher les spectogrammes).
 
+Audacity
+Permet de manipuler des fichiers audio (Vitesse/sens lecture, spectre, ...).
+
+ffmpeg
+Permet de checker l'intégrité d'un fichier audio et reporter les infos et erreurs.
+Exemple : ffmpeg -v info -i stego.mp3 -f null -
+
+Audiostego (hideme)
+Outil permettant de cacher/trouver de la donnée cachée dans un fichier WAV/MP3.
+Exemple : hideme stego.mp3 -f && cat output.txt
+Lien: https://github.com/danielcardeenas/AudioStego
+
+spectrology
+Encoder une image dans un spectrogramme audio.
+Exemple : python spectrology.py image.bmp -b 13000 -t 19000
+Lien: https://github.com/solusipse/spectrology
+
+mp3stego (Windows)
+Outil permettant de cacher de la donnée dans un mp3 ou wav. Disponible sous Windows only.
+Exemple :
+Decode.exe -X Chall.wav -A
+Input file = 'Chall.wav'  output file = 'Chall.wav.aif'
+Output file written in AIFF format
+Will attempt to extract hidden information. Output: Chall.wav.txt
+Enter a passphrase:
+the bit stream file Chall.wav is a BINARY file
+Decoding of "Chall.wav" is finished
+The decoded PCM output file name is "Chall.wav.aif"
+"Chall.wav.aif" has been written with AIFF header information
+
+type Chall.wav.txt
+FLAG{GG_Y0u_W1n}
+Lien: https://www.petitcolas.net/steganography/mp3stego/
+
+WavePad
+Permet d'effectuer plusieurs transformations sur le son et ses fréquences (Un des plus simple d'utilisation).
+Lien: https://www.nch.com.au/wavepad/fr/index.html
+
+QSSTV
+Permet d'afficher le signal de transmission SSTV
+Configuration -> Audio Input -> From File -> signals.wav
