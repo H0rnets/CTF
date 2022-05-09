@@ -55,4 +55,5 @@ Affiche ce qu'il y a dans l'objet 77.
 
 PPDF> object 77 > /home/Hornets/CTF/extract.txt
 
-
+pdftk
+Utilisation : pdftk flag.pdf output /tmp/l.pdf uncompress
