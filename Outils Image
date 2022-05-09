@@ -1,8 +1,108 @@
+Site Web Aperisolve
+Site permettant de détécter de nombreux éléments (exif, steghide, strings, binwlak...).
+Lien : https://aperisolve.fr
+
 LSB-Steganographie
 Outil permettant d'encoder/décoder de la data en modifiant les bits de couleur (LSB).
 Utilisation : $python2 LSB-Steganography/LSBSteg.py decode -i chall.png -o flag && cat flag
-Lien: https://github.com/RobinDavid/LSB-Steganography
+Lien: https://github.com/RobinDavid/LSB-Steganography.git
 
 exiftool
-Affiche les meta-données EXIF d'un fichier
+Affiche les meta-données EXIF d'un fichier.
+Utilisation : exiftool lefichier
+Lien: https://github.com/exiftool/exiftool.git
+
+Paint/Gimp
+Jouer avec les contrastes, couleurs peut quelques fois s'avérer utile
+
+Steghide
+Permet de dissimuler du texte dans un fichier (image ou son).
+Utilisation : steghide extract -sf ch.jpg
+Lien: https://github.com/StefanoDeVuono/steghide.git
+
+Convert
+Outil pour convertir des formats d'image, manipuler les bits, pixel...
+Utilisation:convert ch13.png ch13.jpg
+
+Sng
+Outil pour convertir des fichiers PNG au format SNG.
+Utilisation : sng -v ./ch.png
+
+Stegsolve
+Permet de manipuler des images en fonction des pixels, filtres, ...
+Lien: http://www.caesum.com/handbook/Stegsolve.jar
+
+identify
+Permet de checker quel type d'image est-ce et également si l'image est corrompu.
+Utilisation : identify image.png -verbose
+
+
+pngcheck
+Permet d'obtenir les détails d'un fichier PNG (ou trouver si c'est un autre type de fichier).
+Utilisation : pngcheck stego.png
+
+stegoveritas
+Outil disposant de nombreuses fonctionnalités :  vérifier les métadonnées, créer de nombreuses images transformées, Brute forces LSB.
+Utilisattion : python3 stegoveritas.py stego.jpg
+Lien: https://github.com/bannsec/stegoVeritas
+
+zsteg
+Permet de détecter le type de stéganographie du fichier (LSB openstego, Camouflage ...).
+Utilisation : zsteg -a stego.jpg #Effectuer tout les checks
+Lien: https://github.com/zed-0xff/zsteg
+
+
+stegdetect
+Effectue des tests statistiques pour déterminer si un outil stego a été utilisé jsteg, outguess, jphide.
+Utilisation : stegdetect stego.jpg
+
+stegbreak
+Brute forcer pour JPG (Pour les méthodes outguess, jphide et jsteg).
+Utilisation : 
+stegbreak -t o -f wordlist.txt stego.jpg #pour methode outguess
+stegbreak -t p -f wordlist.txt stego.jpg #pour methode jphide 
+stegbreak -t j -f wordlist.txt stego.jpg #pour methode jsteg
+
+
+jphide / jpseek
+Permet de dissimuler/extraire de la donnée cachée dans un JPG.
+Utilisation : 
+phide cover.jpg stego.jpg secret.txt #Cacher de la donnée
+jpseek stego.jpg output.txt #Extraire de la donnée
+Lien :
+http://linux01.gwdg.de/~alatham/stego.html
+https://github.com/mmayfield1/SSAK
+
+jsteg
+Permet de cacher / extraire via le LSB d'un JPG.
+Utilisation : 
+jsteg hide cover.jpg secret.txt stego.jpg #Cacher de la donnée
+jsteg reveal cover.jpg output.txt #Extraire la donnée
+Lien: https://github.com/lukechampine/jsteg
+
+openstego
+Permet de manipuler le LSB (sous plusieurs algorithme) d'un PNG.
+Utilisation : 
+openstego embed -mf secret.txt -cf cover.png -p password -sf stego.png #Cacher via le LSB
+openstego extract -sf openstego.png -p abcd -xf output.txt #Extraire le LSB
+Lien : Lien: https://github.com/syvaidya/openstego
+
+outguess
+Utilise la méthode des "bits redondants" pour masquer/extraire des données.
 Utilisation :
+outguess -k password -d secret.txt cover.jpg stego.jpg #Cacher secret.txt
+outguess-extract -r -k password stego.jpg output.txt #Extraire le secret
+
+stegano
+Cacher/extraire de la donnée via LSB (Plusieurs methode) d'un fichier PNG.
+Utilisation : 
+stegano-lsb hide --input cover.jpg -f secret.txt -e UTF-8 --output stego.png or stegano-red hide --input cover.png -m "secret msg" --output stego.png or stegano-lsb-set hide --input cover.png -f secret.txt -e UTF-8 -g $GENERATOR --output stego.png for various generators (stegano-lsb-set list-generators) 	stegano-lsb reveal -i stego.png -e UTF-8 -o output.txt or stegano-red reveal -i stego.png or stegano-lsb-set reveal -i stego.png -e UTF-8 -g $GENERATOR -o output.txt
+Lien: https://github.com/cedricbonhomme/Stegano
+
+
+cloackedpixel
+Outil de manipulation LSB pour PNG.
+Utilisation : 
+cloackedpixel hide cover.jpg secret.txt password creates cover.jpg-stego.png #
+cloackedpixel extract cover.jpg-stego.png output.txt password
+Lien: https://github.com/livz/cloacked-pixel
