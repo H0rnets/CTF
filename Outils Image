@@ -1,0 +1,4 @@
+LSB-Steganographie
+Outil permettant d'encoder/décoder de la data en modifiant les bits de couleur (LSB).
+Utilisation : $python2 LSB-Steganography/LSBSteg.py decode -i chall.png -o flag && cat flag
+Lien: https://github.com/RobinDavid/LSB-Steganography
