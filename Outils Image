@@ -2,6 +2,11 @@ Site Web Aperisolve
 Site permettant de détécter de nombreux éléments (exif, steghide, strings, binwlak...).
 Lien : https://aperisolve.fr
 
+Binwalk
+Outils permettant d'extraire des fichiers caché.
+Utilisation : binwalk --dd=".*" lefichier.txt
+Lien: https://github.com/ReFirmLabs/binwalk.git
+
 LSB-Steganographie
 Outil permettant d'encoder/décoder de la data en modifiant les bits de couleur (LSB).
 Utilisation : $python2 LSB-Steganography/LSBSteg.py decode -i chall.png -o flag && cat flag
